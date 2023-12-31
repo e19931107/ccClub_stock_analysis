@@ -1,7 +1,7 @@
 pandas
 Testmodule
 datetime
-pandas.core.reshape.pivot
+pandas
 sys
 matplotlib.font_manager
 matplotlib.pyplot
