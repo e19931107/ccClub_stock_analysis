@@ -2,6 +2,4 @@ pandas
 Testmodule
 datetime
 pandas
-matplotlib.font_manager
-matplotlib.pyplot
-matplotlib.ticker
+matplotlib
