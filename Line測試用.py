@@ -3,6 +3,7 @@ from flask import Flask, request, abort
 from linebot import (LineBotApi, WebhookHandler)
 from linebot.exceptions import (InvalidSignatureError)
 from linebot.models import *
+import re
 from datetime import datetime
 
 app = Flask(__name__)
@@ -41,9 +42,10 @@ def callback():
 ##### 基本上程式編輯都在這個function #####
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
-    message = TextSendMessage(text=event.message.text)
+    message = event.message.text
+    # message = TextSendMessage(text=event.message.text)
     # line_bot_api.reply_message(event.reply_token, message)
-    if re.match('告訴我秘密',message):
+    if re.match('選股',message):
         line_bot_api.reply_message(event.reply_token,TextSendMessage('才不告訴你哩！'))
     else:
         line_bot_api.reply_message(event.reply_token, TextSendMessage(message))
