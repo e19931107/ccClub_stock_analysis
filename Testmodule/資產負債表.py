@@ -1,6 +1,7 @@
 def 資產負債表by季(user_year, user_quarter):
     import requests
     import pandas as pd
+    from io import StringIO
 
     def get_資產負債表(TYPEK, year,season):
         url = "https://mops.twse.com.tw/mops/web/ajax_t163sb05"
@@ -8,6 +9,8 @@ def 資產負債表by季(user_year, user_quarter):
         parameter = { 'firstin': '1', 'TYPEK': TYPEK, 'year': str(year), 'season': str(season) }
 
         res = requests.post(url, data = parameter)
+        html_content = res.text
+        html_io = StringIO(html_content)
         df = pd.read_html(res.text)[3]
 
         df.insert(1, '年度', year)
