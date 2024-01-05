@@ -31,3 +31,5 @@ def 綜合損益表by季(user_year, user_quarter):
 
     data["Key"] = data["公司 代號"].astype(str) + data["年度"].astype(str) + data["季別"].astype(str)
     return data
+
+綜合損益表by季(2023, 2)
