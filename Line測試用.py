@@ -21,10 +21,10 @@ app = Flask(__name__)
 now_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
 
 # # 這是愛德華的token, Channel Secrect, 個人ID:
-line_bot_api = LineBotApi('R6xhSVo39d+BwU3uNoU1hozNzq+LGxB0+SaIp/6rsGZz4XebV/eMTKYJPECufCfsQp/+D5Qyud13dDoMFtHiUGLC2iDfO2EjwX7l6+4hno0CL3r2ssnd/W/kPAGixXYqTPNbojiHCfp7v3Gi+GyJAAdB04t89/1O/w1cDnyilFU=')
-handler = WebhookHandler('1d4de1d6d16dc9be4de83f8835479849')
+line_bot_api = LineBotApi('')
+handler = WebhookHandler('')
 line_bot_api.push_message(
-    'Uf7c0d2712c0be085df517184ae2548ac', TextSendMessage(text=f'歡迎來到選股達人，若你準備好了，請輸入開始吧'))
+    '', TextSendMessage(text=f'歡迎來到選股達人，若你準備好了，請輸入開始吧'))
 
 # 監聽所有來自 /callback 的 Post Request
 @app.route("/callback", methods=['POST'])
